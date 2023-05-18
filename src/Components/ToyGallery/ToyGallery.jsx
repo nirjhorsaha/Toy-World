@@ -2,7 +2,7 @@ import React from 'react';
 
 const ToyGallery = () => {
     return (
-        <div>
+        <div className='mt-4'>
             <h1 className='text-center text-5xl uppercase text-orange-400 font-bold mb-6'>Toys Gallery</h1>
             <div class="grid md:grid-cols-4 gap-4 ">
                 <div>

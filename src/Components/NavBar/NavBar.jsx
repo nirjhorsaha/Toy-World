@@ -1,8 +1,16 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import logo from '/toy-logo.png'
+import { AuthContext } from '../../Provider/AuthProvider';
 
 const NavBar = () => {
+    const { user, logout } = useContext(AuthContext);
+    // console.log(user);
+    const handleLogout = () => {
+        logout()
+            .then()
+            .catch(error => console.log(error))
+    }
     return (
         <div>
             <div className="navbar bg-base-100 ">
@@ -24,18 +32,24 @@ const NavBar = () => {
                                     All Toys
                                 </NavLink>
                             </li>
-                            <li>
-                                <NavLink to="/mytoys"
-                                    className={({ isActive }) => (isActive ? 'text-red-500 underline' : 'default')}>
-                                    My Toys
-                                </NavLink>
-                            </li>
-                            <li>
-                                <NavLink to="/addtoys"
-                                    className={({ isActive }) => (isActive ? 'text-red-500 underline' : 'default')}>
-                                    Add Toys
-                                </NavLink>
-                            </li>
+                            {
+                                user && 
+                                <li>
+                                    <NavLink to="/mytoys"
+                                        className={({ isActive }) => (isActive ? 'text-red-500 underline' : 'default')}>
+                                        My Toys
+                                    </NavLink>
+                                </li>
+                            }
+                            {
+                                user && 
+                                <li>
+                                    <NavLink to="/addtoys"
+                                        className={({ isActive }) => (isActive ? 'text-red-500 underline' : 'default')}>
+                                        Add Toys
+                                    </NavLink>
+                                </li>
+                           }
                             <li>
                                 <NavLink to="/blog"
                                     className={({ isActive }) => (isActive ? 'text-red-500 underline' : 'default')}>
@@ -62,18 +76,24 @@ const NavBar = () => {
                                 All Toys
                             </NavLink>
                         </li>
-                        <li>
-                            <NavLink to="/mytoys"
-                                className={({ isActive }) => (isActive ? 'text-red-500 underline' : 'default')}>
-                                My Toys
-                            </NavLink>
-                        </li>
-                        <li>
-                            <NavLink to="/addtoys"
-                                className={({ isActive }) => (isActive ? 'text-red-500 underline' : 'default')}>
-                                Add Toys
-                            </NavLink>
-                        </li>
+                        {
+                            user &&
+                                <li>
+                                    <NavLink to="/mytoys"
+                                        className={({ isActive }) => (isActive ? 'text-red-500 underline' : 'default')}>
+                                        My Toys
+                                    </NavLink>
+                                </li>
+                        }
+                        {
+                            user &&
+                            <li>
+                                <NavLink to="/addtoys"
+                                    className={({ isActive }) => (isActive ? 'text-red-500 underline' : 'default')}>
+                                    Add Toys
+                                </NavLink>
+                            </li>
+                        }
                         <li>
                             <NavLink to="/blog"
                                 className={({ isActive }) => (isActive ? 'text-red-500 underline' : 'default')}>
@@ -87,9 +107,9 @@ const NavBar = () => {
                     <div className="dropdown dropdown-end">
                         <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
                             {
-                                // user &&
+                                user &&
                                 <div className="w-10 rounded-full">
-                                    <img src="" />
+                                        <img src={user?.photoURL} />
                                 </div>
                             }
                         </label>
@@ -102,12 +122,9 @@ const NavBar = () => {
                             <li><a>Dashboard</a></li>
                         </ul>
                     </div>
-                    <Link to='/login'>
-                        <button className="btn btn-warning btn-outline ms-4">login</button>
-                    </Link>
                     {/* {
                         user ?
-                            <button className="btn btn-warning btn-outline ms-4">Logout</button>
+                            <button onClick={handleLogout} className="btn btn-warning btn-outline ms-4">Logout</button>
                             : <Link to='/login'>
                                 <button className="btn btn-warning btn-outline ms-4">login</button>
                             </Link>
