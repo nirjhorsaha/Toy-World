@@ -3,8 +3,8 @@ import React from 'react';
 const ToyGallery = () => {
     return (
         <div>
-            <h1 className='text-center text-5xl uppercase text-orange-400 font-bold'>Toys Gallery</h1>
-            <div class="grid md:grid-cols-4 gap-4 mt-6">
+            <h1 className='text-center text-5xl uppercase text-orange-400 font-bold mb-6'>Toys Gallery</h1>
+            <div class="grid md:grid-cols-4 gap-4 ">
                 <div>
                     <img src="https://img.freepik.com/free-photo/toy-truck-with-christmas-trees_1252-293.jpg?w=740&t=st=1684407821~exp=1684408421~hmac=b71b9af1a44cc8661d99ebf46aaefbbd711d5805a5f10ab4ddcda907377ab46b" className='rounded-lg' alt="" srcset="" />
                 </div>
