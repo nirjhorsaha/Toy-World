@@ -122,13 +122,13 @@ const NavBar = () => {
                             <li><a>Dashboard</a></li>
                         </ul>
                     </div>
-                    {/* {
+                    {
                         user ?
                             <button onClick={handleLogout} className="btn btn-warning btn-outline ms-4">Logout</button>
                             : <Link to='/login'>
                                 <button className="btn btn-warning btn-outline ms-4">login</button>
                             </Link>
-                    } */}
+                    }
                 </div>
             </div>
         </div>
