@@ -5,13 +5,13 @@ const AllToys = () => {
     useTitle('All Toys');
     const [allToys, setAllToys] = useState([])
 
-    // useEffect(() => {
-    //     fetch('http://localhost:5000/alltoys')
-    //         .then((res) => res.json())
-    //         .then((result) => {
-    //             setAllToys(result);
-    //         });
-    // }, []);
+    useEffect(() => {
+        fetch('http://localhost:5000/alltoys')
+            .then((res) => res.json())
+            .then((result) => {
+                setAllToys(result);
+            });
+    }, []);
 
     return (
         <div className='mb-6'>
