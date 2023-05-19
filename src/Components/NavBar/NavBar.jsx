@@ -33,7 +33,7 @@ const NavBar = () => {
                                 </NavLink>
                             </li>
                             {
-                                user && 
+                                user &&
                                 <li>
                                     <NavLink to="/mytoys"
                                         className={({ isActive }) => (isActive ? 'text-red-500 underline' : 'default')}>
@@ -42,14 +42,14 @@ const NavBar = () => {
                                 </li>
                             }
                             {
-                                user && 
+                                user &&
                                 <li>
                                     <NavLink to="/addtoys"
                                         className={({ isActive }) => (isActive ? 'text-red-500 underline' : 'default')}>
                                         Add Toys
                                     </NavLink>
                                 </li>
-                           }
+                            }
                             <li>
                                 <NavLink to="/blog"
                                     className={({ isActive }) => (isActive ? 'text-red-500 underline' : 'default')}>
@@ -78,12 +78,12 @@ const NavBar = () => {
                         </li>
                         {
                             user &&
-                                <li>
-                                    <NavLink to="/mytoys"
-                                        className={({ isActive }) => (isActive ? 'text-red-500 underline' : 'default')}>
-                                        My Toys
-                                    </NavLink>
-                                </li>
+                            <li>
+                                <NavLink to="/mytoys"
+                                    className={({ isActive }) => (isActive ? 'text-red-500 underline' : 'default')}>
+                                    My Toys
+                                </NavLink>
+                            </li>
                         }
                         {
                             user &&
@@ -109,7 +109,7 @@ const NavBar = () => {
                             {
                                 user &&
                                 <div className="w-10 rounded-full">
-                                        <img src={user?.photoURL} />
+                                    <img src={user?.photoURL} />
                                 </div>
                             }
                         </label>
@@ -124,10 +124,13 @@ const NavBar = () => {
                     </div>
                     {
                         user ?
-                            <button onClick={handleLogout} className="btn btn-warning btn-outline ms-4">Logout</button>
+                            <div>
+                                <button onClick={handleLogout} className="btn btn-warning btn-outline ms-4">Logout</button>
+                            </div>
+                            
                             : <Link to='/login'>
                                 <button className="btn btn-warning btn-outline ms-4">login</button>
-                            </Link>
+                            </Link>  
                     }
                 </div>
             </div>

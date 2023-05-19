@@ -23,9 +23,10 @@ const SignIn = () => {
     // console.log(email, password);
     const handleLogin = (event) => {
         event.preventDefault();
-        if (!email, password) {
+        if (!(email && password)) {
             setError('Something went wrong!')
         }
+        
         if ((email, password)) {
             signIn(email, password)
                 .then((result) => {

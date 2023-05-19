@@ -38,9 +38,9 @@ const Registration = () => {
                 });
         }
 
-        const handleAccepted = event => {
-            setAccepted(event.target.checked)
-        }
+        // const handleAccepted = event => {
+        //     setAccepted(event.target.checked)
+        // }
     };
 
     return (
