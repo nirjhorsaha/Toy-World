@@ -17,7 +17,7 @@ const Header = () => {
                         </button>
                     </div>
                     <div className="lg:mt-0 lg:col-span-5 sm:flex-col lg:flex">
-                        <img className='rounded md:rounded-l-3xl' src={headerImg} alt="mockup" />
+                        <img className='rounded md:rounded-l-2xl' src={headerImg} alt="mockup" />
                     </div>
                 </div>
             </section>

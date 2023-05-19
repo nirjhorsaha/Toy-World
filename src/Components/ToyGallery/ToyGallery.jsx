@@ -5,16 +5,11 @@ const ToyGallery = () => {
         <div className='mt-4 bg-gray-50 p-4 rounded-3xl'>
             <h1 className='text-center text-5xl uppercase text-orange-400 font-bold mb-4'>Toys Gallery</h1>
             <p className='text-center italic text-xl mb-4'>Step into a World of Wonder: Explore Our Enchanting Toy Gallery!</p>
-            <div class="grid md:grid-cols-4 gap-4 ">
+            <div class="grid md:grid-cols-3 gap-4 w-4/5 mx-auto">
                 <div>
                     <img src="https://img.freepik.com/free-photo/toy-truck-with-christmas-trees_1252-293.jpg?w=740&t=st=1684407821~exp=1684408421~hmac=b71b9af1a44cc8661d99ebf46aaefbbd711d5805a5f10ab4ddcda907377ab46b" className='rounded-lg' alt="" srcset="" />
                 </div>
-                <div>
-                    <img src="https://img.freepik.com/free-photo/young-boy-playing-indoors-with-eco-toys_23-2150268109.jpg?w=740&t=st=1684408025~exp=1684408625~hmac=996397e2be62f0231f49c0956508de5e1d2174de69184848a56460b4f53f9f19" className='rounded-lg' alt="" srcset="" />
-                </div>
-                <div>
-                    <img src="https://img.freepik.com/free-photo/cute-kid-playing-with-wooden-train-side-view_23-2149357243.jpg?w=740&t=st=1684408045~exp=1684408645~hmac=08c3e66b7d9f8dd82deec42ffb1e74b058aa693668665b89b43968f6b6aa46d8" className='rounded-lg' alt="" srcset="" />
-                </div>
+                
                 <div>
                     <img src="https://img.freepik.com/free-photo/close-up-toy-car-with-easter-eggs_23-2149318378.jpg?w=740&t=st=1684408075~exp=1684408675~hmac=a6a7bb751d26b4e4ccb235f44644600ca644b66269c96feb238354d017a3dbda" className='rounded-lg' alt="" srcset="" />
                 </div>
