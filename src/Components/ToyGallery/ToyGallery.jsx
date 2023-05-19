@@ -2,8 +2,9 @@ import React from 'react';
 
 const ToyGallery = () => {
     return (
-        <div className='mt-4'>
-            <h1 className='text-center text-5xl uppercase text-orange-400 font-bold mb-6'>Toys Gallery</h1>
+        <div className='mt-4 bg-gray-50 p-4 rounded-3xl'>
+            <h1 className='text-center text-5xl uppercase text-orange-400 font-bold mb-4'>Toys Gallery</h1>
+            <p className='text-center italic text-xl mb-4'>Step into a World of Wonder: Explore Our Enchanting Toy Gallery!</p>
             <div class="grid md:grid-cols-4 gap-4 ">
                 <div>
                     <img src="https://img.freepik.com/free-photo/toy-truck-with-christmas-trees_1252-293.jpg?w=740&t=st=1684407821~exp=1684408421~hmac=b71b9af1a44cc8661d99ebf46aaefbbd711d5805a5f10ab4ddcda907377ab46b" className='rounded-lg' alt="" srcset="" />

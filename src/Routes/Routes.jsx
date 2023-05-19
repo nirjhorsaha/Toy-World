@@ -7,6 +7,7 @@ import Main from "../Layouts/Main";
 import Blog from "../Components/Blog/Blog";
 import AllToys from "../Components/AllToys/AllToys";
 import AddToys from "../Components/AddToys/AddToys";
+import MyToys from "../Components/MyToys/MyToys";
 
 const router = createBrowserRouter([
     {
@@ -38,6 +39,10 @@ const router = createBrowserRouter([
                 path: '/addtoys',
                 element: <AddToys />
             },
+            {
+                path: '/mytoys',
+                element: <MyToys/>
+            }
         ]
     }
 ]);
