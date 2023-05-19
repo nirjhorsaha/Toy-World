@@ -16,7 +16,7 @@ const AddToys = () => {
                     <div className='grid md:grid-cols-3 gap-4 '>
                         <div>
                             <label className="label">
-                                <span className="label-text">Picture URL</span>
+                                <span className="label-text font-semibold">Picture URL</span>
                             </label>
                             <input type='text' className='input input-bordered w-full ' placeholder='Picture URL'
                                 {...register("pURL", { required: true })} />
@@ -24,7 +24,7 @@ const AddToys = () => {
                         </div>
                         <div>
                             <label className="label">
-                                <span className="label-text">Seller Name</span>
+                                <span className="label-text font-semibold">Seller Name</span>
                             </label>
                             <input type='text' className='input input-bordered w-full ' placeholder='Seller Name'
                                 {...register("sName", { required: true })} />
@@ -32,7 +32,7 @@ const AddToys = () => {
                         </div>
                         <div>
                             <label className="label">
-                                <span className="label-text">Seller E-mail</span>
+                                <span className="label-text font-semibold">Seller E-mail</span>
                             </label>
                             <input type='text' className='input input-bordered w-full ' placeholder='Seller E-mail'
                                 {...register("sEmail", { required: true })} />
@@ -40,7 +40,7 @@ const AddToys = () => {
                         </div>
                         <div>
                             <label className="label">
-                                <span className="label-text">Price</span>
+                                <span className="label-text font-semibold">Price</span>
                             </label>
                             <input type='number' className='input input-bordered w-full ' placeholder='Price'
                                 {...register("price", { required: true })} />
@@ -48,7 +48,7 @@ const AddToys = () => {
                         </div>
                         <div>
                             <label className="label">
-                                <span className="label-text">Rating</span>
+                                <span className="label-text font-semibold">Rating</span>
                             </label>
                             <input type='number' className='input input-bordered w-full ' placeholder='Rating'
                                 {...register("rating", { required: true })} />
@@ -56,7 +56,7 @@ const AddToys = () => {
                         </div>
                         <div>
                             <label className="label">
-                                <span className="label-text">Available Quantity</span>
+                                <span className="label-text font-semibold">Available Quantity</span>
                             </label>
                             <input type='number' className='input input-bordered w-full ' placeholder='Available Quantity'
                                 {...register("aQuantity", { required: true })} />
@@ -64,7 +64,7 @@ const AddToys = () => {
                         </div>
                         <div>
                             <label className="label">
-                                <span className="label-text">Details</span>
+                                <span className="label-text font-semibold">Details</span>
                             </label>
                             <input type='text' className='input input-bordered w-full ' placeholder='Details'
                                 {...register("details", { required: true })} />
@@ -72,11 +72,11 @@ const AddToys = () => {
                         </div>
                         <div>
                             <label className="label">
-                                <span className="label-text">Sub-category</span>
+                                <span className="label-text font-semibold">Sub-category</span>
                             </label>
                             <select {...register("Sub-category")}>
-                                <option value="Sports-ar">Sports-ar</option>
-                                <option value="Truck">Truck</option>
+                                <option value="Regular-Car">Regular-Car</option>
+                                <option value="Sports-Car">Sports-Car</option>
                                 <option value="Mini-Truck">Mini-Truck</option>
                             </select>
                             {errors.exampleRequired && <span>This field is required</span>}
