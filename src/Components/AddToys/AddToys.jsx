@@ -2,6 +2,8 @@ import React, { useContext } from 'react';
 import useTitle from '../../hooks/useTitle';
 import { useForm } from "react-hook-form";
 import { AuthContext } from '../../Provider/AuthProvider';
+import Swal from 'sweetalert2'
+// const Swal = require('sweetalert2')
 
 const AddToys = () => {
     useTitle('Add Toys');
@@ -18,6 +20,14 @@ const AddToys = () => {
             .then((res) => res.json())
             .then((result) => {
                 console.log(result);
+                if (data.insertedId) {
+                    Swal.fire({
+                        title: 'Success!',
+                        text: 'Coffee Added Successfully',
+                        icon: 'success',
+                        confirmButtonText: 'Cool'
+                    })
+                }
             });
     }
     // console.log(watch("example"));
@@ -105,6 +115,7 @@ const AddToys = () => {
                     </div>
                     <div className='text-center my-4'>
                         <input className="btn btn-wide btn-outline " type="submit" />
+                        
                     </div>
                 </form>
             </div>

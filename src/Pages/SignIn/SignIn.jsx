@@ -24,7 +24,10 @@ const SignIn = () => {
     const handleLogin = (event) => {
         event.preventDefault();
         if (!(email && password)) {
-            setError('Something went wrong!')
+            setError('Something went wrong!');
+        }
+        else {
+            setError("Email & Password doesn\'t match")
         }
         
         if ((email, password)) {

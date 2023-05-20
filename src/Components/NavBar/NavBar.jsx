@@ -2,6 +2,8 @@ import React, { useContext } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import logo from '/toy-logo.png'
 import { AuthContext } from '../../Provider/AuthProvider';
+import "react-tooltip/dist/react-tooltip.css";
+import { Tooltip as ReactTooltip } from "react-tooltip";
 
 const NavBar = () => {
     const { user, logout } = useContext(AuthContext);
@@ -108,11 +110,16 @@ const NavBar = () => {
                         <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
                             {
                                 user &&
-                                <div className="w-10 rounded-full">
+                                <div id="app-title" className="w-10 rounded-full">
                                     <img src={user?.photoURL} />
                                 </div>
                             }
                         </label>
+                        <ReactTooltip
+                            data-tooltip-id="app-title"
+                            place="bottom"
+                            content="user@gmail.com"
+                        />
                         <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
                             <li>
                                 <a className="justify-between">
