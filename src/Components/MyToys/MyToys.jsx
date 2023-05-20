@@ -1,5 +1,7 @@
 import React from 'react';
 import useTitle from '../../hooks/useTitle';
+import { AiOutlineDelete } from "react-icons/ai";
+import { HiOutlinePencilAlt } from "react-icons/hi";
 
 const MyToys = () => {
     useTitle('My Toys');
@@ -7,7 +9,7 @@ const MyToys = () => {
         <div>
             <h1 className='text-center text-5xl uppercase text-orange-400 font-bold mb-6 tracking-widest'>My Toys</h1>
             <div className="overflow-x-auto w-full">
-                <table className="table w-full">
+                <table className="table w-full mb-6">
                     {/* head */}
                     <thead>
                         <tr>
@@ -49,8 +51,10 @@ const MyToys = () => {
                         </td>
                         <td>Purple</td>
                         <td>Purple</td>
-                        <th>
-                            <button className="btn btn-ghost btn-xs">details</button>
+                        <th className='flex items-center '>
+                            <button className="btn btn-ghost ">details</button> 
+                            <button className="btn btn-ghost "><AiOutlineDelete /></button>
+                            <button className="btn btn-ghost"> <HiOutlinePencilAlt/> </button>
                         </th>
                     </tr>
                     </table>

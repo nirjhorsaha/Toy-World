@@ -1,12 +1,17 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import headerImg from '/toys-2.jpg'
+import 'aos/dist/aos.css';
+import AOS from 'aos';
 
 const Header = () => {
+    useEffect(() => {
+        AOS.init({ duration: 1000 });
+    },[])
     return (
         <>
             <section className="bg-gray-50 rounded-3xl dark:bg-gray-900 ">
-                <div className="grid max-w-screen-xl px-4 py-8 mx-auto lg:gap-8 xl:gap-0 lg:py-8 lg:grid-cols-12 ">
-                    <div className="mr-auto place-self-center lg:col-span-7">
+                <div className="grid max-w-screen-xl px-4 py-8 mx-auto lg:gap-8 xl:gap-0 lg:py-8 lg:grid-cols-12  ">
+                    <div className="mr-auto place-self-center lg:col-span-7" data-aos="fade-right">
                         <h1 className="text-center md:text-left md:max-w-2xl mb-4 text-2xl font-extrabold tracking-tight leading-none md:text-7xl dark:text-white uppercase ">
                             Find the best toys For <br /> <span className='text-orange-400 tracking-wide'>your children</span>
                         </h1>
@@ -16,7 +21,7 @@ const Header = () => {
                             <svg className="w-5 h-5 ml-2 -mr-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
                         </button>
                     </div>
-                    <div className="lg:mt-0 lg:col-span-5 sm:flex-col lg:flex">
+                    <div className="lg:mt-0 lg:col-span-5 sm:flex-col lg:flex " data-aos="fade-left">
                         <img className='rounded md:rounded-l-2xl' src={headerImg} alt="mockup" />
                     </div>
                 </div>

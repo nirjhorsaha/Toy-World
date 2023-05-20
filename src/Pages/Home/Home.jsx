@@ -6,6 +6,7 @@ import ShopbyCategory from '../../Components/ShopbyCategory/ShopbyCategory';
 import BuyToys from '../../Components/BuyToys/BuyToys';
 import TrendingToys from '../../Components/TrendingToys/TrendingToys';
 
+
 const Home = () => {
     useTitle('Home');
     return (
