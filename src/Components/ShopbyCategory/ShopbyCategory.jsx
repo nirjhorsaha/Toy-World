@@ -9,18 +9,111 @@ const ShopbyCategory = () => {
         setToggleState(index);
     };
     return (
-        <div>
+        <div className='my-6'>
+            <h1 className='text-center text-5xl uppercase text-orange-400 font-bold mb-6 tracking-widest'>Toys Category</h1>
             <Tabs className='text-center '>
-                <TabList className='flex justify-center items-center'>
-                    <Tab>Title 1</Tab>
-                    <Tab>Title 2</Tab>
+                <TabList className='flex justify-center items-center gap-2'>
+                    <Tab className='border-2 rounded-lg '>
+                        <button className={toggleState === 1 ? "tabs active-tabs" : "tabs"}
+                            onClick={() => toggleTab(1)}>
+                            Sports Car
+                        </button>
+                    </Tab>
+                    <Tab className='border-2 rounded-lg '>
+                        <button className={toggleState === 2 ? "tabs active-tabs" : "tabs"}
+                            onClick={() => toggleTab(2)}>
+                            Regular Car
+                        </button>
+                    </Tab>
+                    <Tab className='border-2 rounded-lg '>
+                        <button className={toggleState === 3 ? "tabs active-tabs" : "tabs"}
+                            onClick={() => toggleTab(3)}>
+                            Mini-Truck
+                        </button>
+                    </Tab>
                 </TabList>
+                {/* Tab-1 */}
                 <TabPanel>
-                    <h2>Any content 1</h2>
+                    <div className='grid md:grid-cols-2 gap-4'>
+                        {/* side-1 */}
+                        <div className="card card-side bg-base-100 shadow-xl">
+                            <figure><img src="/images/stock/photo-1635805737707-575885ab0820.jpg" alt="Movie" /></figure>
+                            <div className="card-body">
+                                <h2 className="card-title">New movie is released!</h2>
+                                <p>Click the button to watch on Jetflix app.</p>
+                                <div className="card-actions justify-end">
+                                    <button className="btn btn-primary">Watch</button>
+                                </div>
+                            </div>
+                        </div>
+                        {/* side-2 */}
+                        <div className="card card-side bg-base-100 shadow-xl">
+                            <figure><img src="/images/stock/photo-1635805737707-575885ab0820.jpg" alt="Movie" /></figure>
+                            <div className="card-body">
+                                <h2 className="card-title">New movie is released!</h2>
+                                <p>Click the button to watch on Jetflix app.</p>
+                                <div className="card-actions justify-end">
+                                    <button className="btn btn-primary">Watch</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </TabPanel>
+                {/* Tab-2 */}
                 <TabPanel>
-                    <h2>Any content 2</h2>
+                    <div className='grid md:grid-cols-2 gap-4'>
+                        {/* side-1 */}
+                        <div className="card card-side bg-base-100 shadow-xl">
+                            <figure><img src="/images/stock/photo-1635805737707-575885ab0820.jpg" alt="Movie" /></figure>
+                            <div className="card-body">
+                                <h2 className="card-title">New movie is released!</h2>
+                                <p>Click the button to watch on Jetflix app.</p>
+                                <div className="card-actions justify-end">
+                                    <button className="btn btn-primary">Watch</button>
+                                </div>
+                            </div>
+                        </div>
+                        {/* side-2 */}
+                        <div className="card card-side bg-base-100 shadow-xl">
+                            <figure><img src="/images/stock/photo-1635805737707-575885ab0820.jpg" alt="Movie" /></figure>
+                            <div className="card-body">
+                                <h2 className="card-title">New movie is released!</h2>
+                                <p>Click the button to watch on Jetflix app.</p>
+                                <div className="card-actions justify-end">
+                                    <button className="btn btn-primary">Watch</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </TabPanel>
+                {/* Tab-3 */}
+                <TabPanel>
+                    <div className='grid md:grid-cols-2 gap-4'>
+                        {/* side-1 */}
+                        <div className="card card-side bg-base-100 shadow-xl">
+                            <figure><img src="/images/stock/photo-1635805737707-575885ab0820.jpg" alt="Movie" /></figure>
+                            <div className="card-body">
+                                <h2 className="card-title">New movie is released!</h2>
+                                <p>Click the button to watch on Jetflix app.</p>
+                                <div className="card-actions justify-end">
+                                    <button className="btn btn-primary">Watch</button>
+                                </div>
+                            </div>
+                        </div>
+                        {/* side-2 */}
+                        <div className="card card-side bg-base-100 shadow-xl">
+                            <figure><img src="/images/stock/photo-1635805737707-575885ab0820.jpg" alt="Movie" /></figure>
+                            <div className="card-body">
+                                <h2 className="card-title">New movie is released!</h2>
+                                <p>Click the button to watch on Jetflix app.</p>
+                                <div className="card-actions justify-end">
+                                    <button className="btn btn-primary">Watch</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </TabPanel>
+
             </Tabs>
         </div>
         // <div>
@@ -87,7 +180,7 @@ const ShopbyCategory = () => {
         //             </div>
         //         </div>
         //     </div>
-            
+
         // </div>
     );
 };

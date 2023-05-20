@@ -3,7 +3,7 @@ import React from 'react';
 const TrendingToys = () => {
     return (
         <div className='my-6'>
-            <h1 className='text-center text-5xl uppercase text-orange-400 font-bold mb-4'>Trending Toys</h1>
+            <h1 className='text-center text-5xl uppercase text-orange-400 font-bold mb-4 tracking-widest'>Trending Toys</h1>
             <p className='text-center italic text-xl mb-4'>Hot and Happening: Get Your Hands on the Trendiest Toys of the Season!</p>
             <div class="grid md:grid-cols-3 gap-4 text-center space-y-4 md:space-y-0 w-4/5 mx-auto">
                 <div>

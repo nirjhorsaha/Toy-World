@@ -23,7 +23,7 @@ const AddToys = () => {
     // console.log(watch("example"));
     return (
         <div>
-            <h1 className='text-center text-5xl uppercase text-orange-400 font-bold mb-6'>Add Toys</h1>
+            <h1 className='text-center text-5xl uppercase text-orange-400 font-bold mb-6 tracking-widest'>Add Toys</h1>
             <div className=''>
                 <form onSubmit={handleSubmit(onSubmit)}>
                     <div className='grid md:grid-cols-3 gap-4 '>
