@@ -4,6 +4,7 @@ import { AiOutlineDelete } from "react-icons/ai";
 import { HiOutlinePencilAlt } from "react-icons/hi";
 import { AuthContext } from '../../Provider/AuthProvider';
 import { Link } from 'react-router-dom'
+import Swal from 'sweetalert2'
 
 
 const MyToys = () => {
@@ -13,7 +14,7 @@ const MyToys = () => {
 
 
     useEffect(() => {
-        fetch(`http://localhost:5000/mytoys/${user?.email}`)
+        fetch(`https://toys-server-tau.vercel.app/mytoys/${user?.email}`)
             .then((res) => res.json())
             .then((data) => {
                 // console.log(data);
@@ -22,16 +23,30 @@ const MyToys = () => {
     }, [user]);
 
     const handleDelete = id => {
-        const proceed = confirm('Are You sure you want to delete');
-        if (proceed) {
-            fetch(`http://localhost:5000/mytoys/${id}`, {
+        // const proceed = confirm('Are You sure you want to delete');
+        Swal.fire({
+            title: 'Are you sure?',
+            text: "You won't be able to revert this!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, delete it!'
+        })
+        if (Swal.fire) {
+            fetch(`https://toys-server-tau.vercel.app/mytoys/${id}`, {
                 method: 'DELETE'
             })
                 .then(res => res.json())
                 .then(data => {
                     console.log(data);
                     if (data.deletedCount > 0) {
-                        alert('deleted successful');
+                        // alert('deleted successful');
+                        Swal.fire(
+                            'Deleted!',
+                            'Toy has been deleted.',
+                            'success'
+                        )
                         const remaining = myToys.filter(myToy => myToy._id !== id);
                         setMyToys(remaining);
                     }
@@ -96,7 +111,7 @@ const MyToys = () => {
                                         className="btn btn-ghost "><AiOutlineDelete />
                                     </button>
                                     {/* modified button */}
-                                    <Link to={`/${myToy._id}`}>
+                                    <Link to={`updateToy/${myToy._id}`}>
                                         <button className="btn btn-ghost"> <HiOutlinePencilAlt /> </button>
                                     </Link>
                                 </th>

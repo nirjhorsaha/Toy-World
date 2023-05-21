@@ -1,41 +1,43 @@
 import React, { useContext } from 'react';
 import useTitle from '../../hooks/useTitle';
+import { useParams } from 'react-router-dom';
 import { useForm } from "react-hook-form";
 import { AuthContext } from '../../Provider/AuthProvider';
 import Swal from 'sweetalert2'
-// const Swal = require('sweetalert2')
 
-const AddToys = () => {
-    useTitle('Add Toys');
+const UpdateToyDetails = () => {
+    useTitle('Update Toy');
     const { user } = useContext(AuthContext);
+    const { id } = useParams();
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
     const onSubmit = data => {
         console.log(data);
 
-        fetch("https://toys-server-tau.vercel.app/addtoys", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(data),
+        fetch(`https://toys-server-tau.vercel.app/alltoys/${id}`, {
+            method: 'PUT',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(data)
         })
-            .then((res) => res.json())
-            .then((result) => {
-                console.log(result);
-                if (result.insertedId) {
-                    // alert('added successful');
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                if (data.modifiedCount > 0) {
                     Swal.fire({
                         title: 'Success!',
-                        text: 'Toy Added Successfully',
+                        text: 'Toy Updated Successfully',
                         icon: 'success',
-                        confirmButtonText: 'Close'
+                        confirmButtonText: 'Cool'
                     })
                 }
-            });
+
+            })
     }
-    // console.log(watch("example"));
     return (
         <div>
-            <h1 className='text-center text-5xl uppercase text-orange-400 font-bold mb-6 tracking-widest'>Add Toys</h1>
-            <div className=''>
+            <h1 className='text-center text-5xl uppercase text-orange-400 font-bold mb-6 tracking-widest'>Update Toy Details</h1>
+            <div >
                 <form onSubmit={handleSubmit(onSubmit)}>
                     <div className='grid md:grid-cols-3 gap-4 '>
                         <div>
@@ -115,14 +117,12 @@ const AddToys = () => {
                         </div>
                     </div>
                     <div className='text-center my-4'>
-                        <input className="btn btn-wide btn-outline " type="submit" />
-
+                        <input className="btn btn-wide btn-outline " type="submit" value="Update Toy" />
                     </div>
                 </form>
             </div>
-
         </div>
     );
 };
 
-export default AddToys;
+export default UpdateToyDetails;
