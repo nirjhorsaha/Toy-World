@@ -17,7 +17,7 @@ const ShopbyCategory = () => {
         AOS.init({ duration: 2000 });
     }, [])
     return (
-        <div className='my-6'>
+        <div className='my-10'>
             <h1 className='text-center text-5xl uppercase text-orange-400 font-bold mb-6 tracking-widest'>Toys Category</h1>
             <Tabs className='text-center '>
                 <TabList className='flex justify-center items-center gap-2  mb-4'>

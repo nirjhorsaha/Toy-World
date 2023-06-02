@@ -15,7 +15,7 @@ const NavBar = () => {
     }
     return (
         <div>
-            <div className="navbar bg-base-100 ">
+            <div className="navbar bg-base-100">
                 <div className="navbar-start">
                     <div className="dropdown">
                         <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -52,12 +52,12 @@ const NavBar = () => {
                                     </NavLink>
                                 </li>
                             }
-                            <li>
+                            {/* <li>
                                 <NavLink to="/blog"
                                     className={({ isActive }) => (isActive ? 'text-red-500 underline' : 'default')}>
                                     Blogs
                                 </NavLink>
-                            </li>
+                            </li> */}
                         </ul>
                     </div>
                     <Link to="/" className='normal-case text-5xl custom-text font-bold'>
@@ -96,12 +96,12 @@ const NavBar = () => {
                                 </NavLink>
                             </li>
                         }
-                        <li>
+                        {/* <li>
                             <NavLink to="/blog"
                                 className={({ isActive }) => (isActive ? 'text-red-500 underline' : 'default')}>
                                 Blogs
                             </NavLink>
-                        </li>
+                        </li> */}
                     </ul>
                 </div>
                 <div className="navbar-end">
