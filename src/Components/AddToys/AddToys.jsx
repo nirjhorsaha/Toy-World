@@ -10,7 +10,7 @@ const AddToys = () => {
     const { user } = useContext(AuthContext);
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
     const onSubmit = data => {
-        console.log(data);
+        // console.log(data);
 
         fetch("https://toys-server-tau.vercel.app/addtoys", {
             method: "POST",
